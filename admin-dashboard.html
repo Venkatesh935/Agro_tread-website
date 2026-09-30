@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Agro Traders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <h2>Agro Admin</h2>
+      </div>
+
+      <ul class="admin-menu">
+        <li><a href="admin-dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="admin-products.html">Products</a></li>
+        <li><a href="admin-orders.html">Orders</a></li>
+        <li><a href="admin-users.html">Users</a></li>
+        <li><a href="index.html">Main Site</a></li>
+        <li><a href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>Welcome to Agro Traders admin panel</p>
+        </div>
+      </header>
+
+      <section class="admin-stats">
+        <div class="stat-card">
+          <h3>Total Products</h3>
+          <p id="totalProducts">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Total Orders</h3>
+          <p id="totalOrders">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Total Users</h3>
+          <p id="totalUsers">0</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Pending Orders</h3>
+          <p id="pendingOrders">0</p>
+        </div>
+      </section>
+
+      <section class="admin-actions-section">
+        <h2>Quick Actions</h2>
+        <div class="admin-actions">
+          <a href="admin-products.html" class="btn">Manage Products</a>
+          <a href="admin-orders.html" class="btn">Manage Orders</a>
+          <a href="admin-users.html" class="btn">View Users</a>
+        </div>
+      </section>
+
+      <section class="admin-table-section">
+        <div class="table-header">
+          <h2>Recent Orders</h2>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Payment</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="recentOrdersTable">
+              <tr>
+                <td>#101</td>
+                <td>Venkatesh</td>
+                <td>₹581</td>
+                <td>UPI</td>
+                <td><span class="status pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>#102</td>
+                <td>Ravi</td>
+                <td>₹1250</td>
+                <td>Cash on Delivery</td>
+                <td><span class="status shipped">Shipped</span></td>
+              </tr>
+              <tr>
+                <td>#103</td>
+                <td>Suresh</td>
+                <td>₹890</td>
+                <td>Card</td>
+                <td><span class="status delivered">Delivered</span></td>
+              </tr>
+              <tr>
+                <td>#104</td>
+                <td>Anitha</td>
+                <td>₹1430</td>
+                <td>UPI</td>
+                <td><span class="status pending">Pending</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin-dashboard.js"></script>
+</body>
+</html>

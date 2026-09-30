@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Agro Traders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo">
+        <h2><a href="index.html" class="logo-link">Agro Traders</a></h2>
+      </div>
+
+      <nav class="nav always-show">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="checkout-page">
+    <div class="container">
+      <h2 class="section-title">Checkout</h2>
+
+      <div class="checkout-layout">
+        <div class="checkout-form-box">
+          <h3>Customer Details</h3>
+          <form id="checkoutForm">
+            <div class="form-group">
+              <label for="customerName">Full Name</label>
+              <input type="text" id="customerName" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="customerPhone">Phone Number</label>
+              <input type="tel" id="customerPhone" placeholder="Enter phone number" required />
+            </div>
+
+            <div class="form-group">
+              <label for="customerEmail">Email</label>
+              <input type="email" id="customerEmail" placeholder="Enter email address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="customerAddress">Address</label>
+              <textarea id="customerAddress" rows="4" placeholder="Enter delivery address" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="customerVillage">Village / City</label>
+              <input type="text" id="customerVillage" placeholder="Enter village or city" required />
+            </div>
+
+            <div class="form-group">
+              <label for="customerPincode">Pincode</label>
+              <input type="text" id="customerPincode" placeholder="Enter pincode" required />
+            </div>
+
+            <div class="form-group">
+              <button type="button" id="getLocationBtn" class="btn">Use Current Location</button>
+              <p id="locationStatus" style="margin-top:8px; font-size:14px;"></p>
+            </div>
+
+            <div class="form-group">
+              <label for="paymentMethod">Payment Method</label>
+              <select id="paymentMethod" required>
+                <option value="">Select payment method</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Card</option>
+              </select>
+            </div>
+
+            <!-- Saved address display -->
+            <div class="form-group">
+              <h4>Saved Delivery Address</h4>
+              <div id="savedAddressBox" class="saved-address-box">
+                No address saved yet.
+              </div>
+            </div>
+
+            <button type="submit" class="btn checkout-btn">Place Order</button>
+          </form>
+        </div>
+
+        <div class="order-summary-box">
+          <h3>Order Summary</h3>
+
+          <div id="checkoutItems"></div>
+
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span>₹<span id="subtotal">0</span></span>
+          </div>
+
+          <div class="summary-line">
+            <span>GST (18%)</span>
+            <span>₹<span id="gstAmount">0</span></span>
+          </div>
+
+          <div class="summary-line">
+            <span>Delivery Charge</span>
+            <span>₹<span id="deliveryCharge">50</span></span>
+          </div>
+
+          <div class="summary-line total-line">
+            <span>Total Amount</span>
+            <span>₹<span id="finalTotal">0</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

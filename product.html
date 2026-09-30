@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="header">
+  <div class="container navbar">
+    <h2>Agro Traders</h2>
+    <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+  </div>
+</header>
+
+<section class="product-details">
+  <div class="container product-detail-box">
+
+    <div class="product-image">
+      <img id="productImage" src="" alt="Product Image"/>
+    </div>
+
+    <div class="product-info">
+      <h2 id="productName"></h2>
+      <p id="productCategory"></p>
+      <p id="productDescription"></p>
+
+      <h3>₹<span id="productPrice"></span></h3>
+
+      <button id="addToCartBtn" class="btn">Add to Cart</button>
+      <a href="index.html" class="btn btn-outline">Back</a>
+    </div>
+
+  </div>
+</section>
+
+<script src="product.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agro Traders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo">
+        <h2>NAGARAJ AGRO TRADERS</h2>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+
+      <nav class="nav" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="cart.html">Cart (<span id="cartCount">0</span>)</a></li>
+        </ul>
+      </nav>
+
+      <a href="cart.html" class="btn desktop-btn">Cart (<span id="cartCountDesktop">0</span>)</a>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Quality Agricultural Products for Every Farmer</h1>
+        <p>
+          Buy seeds, fertilizers, pesticides, farm tools, irrigation items,
+          and organic products easily from Agro Traders.
+        </p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn">Explore Products</a>
+          <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=900&q=80" alt="Farmer in field" />
+      </div>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="container">
+      <h2 class="section-title">Our Categories</h2>
+      <div class="category-grid">
+        <div class="card">Seeds</div>
+        <div class="card">Fertilizers</div>
+        <div class="card">Pesticides</div>
+        <div class="card">Farming Tools</div>
+        <div class="card">Irrigation</div>
+        <div class="card">Organic Products</div>
+      </div>
+    </div>
+  </section>
+
+<section class="products" id="products">
+  <div class="container">
+    <h2 class="section-title">Featured Products</h2>
+
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search products..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Seeds">Seeds</option>
+        <option value="Fertilizers">Fertilizers</option>
+        <option value="Pesticides">Pesticides</option>
+        <option value="Tools">Tools</option>
+        <option value="Irrigation">Irrigation</option>
+        <option value="Organic">Organic</option>
+      </select>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+
+    <p id="noProductsMessage" class="no-products">No products found.</p>
+  </div>
+</section>
+
+  <section class="about" id="about">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>About Agro Traders</h2>
+        <p>
+          Agro Traders supports farmers by providing trusted agricultural
+          products at fair prices.
+        </p>
+        <p>
+          Our goal is to make product buying simple, quick, and useful
+          for every farmer.
+        </p>
+      </div>
+
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="Agriculture field" />
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-box">
+        <p><strong>Phone:</strong> +91 9036370020</p>
+        <p><strong>Email:</strong> Nagarajnnc@gmail.com</p>
+        <p><strong>Location:</strong> Balaganur Maski Karnataka 584138 </p>
+<a href="https://wa.me/919036370020?text=Hello%20Agro%20Traders,%20I%20want%20to%20know%20about%20your%20products." target="_blank" class="btn">WhatsApp Us</a>      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Agro Traders. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

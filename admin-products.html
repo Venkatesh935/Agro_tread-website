@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Products - Agro Traders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <h2>Agro Admin</h2>
+      </div>
+
+      <ul class="admin-menu">
+        <li><a href="admin-dashboard.html">Dashboard</a></li>
+        <li><a href="admin-products.html" class="active">Products</a></li>
+        <li><a href="admin-orders.html">Orders</a></li>
+        <li><a href="admin-users.html">Users</a></li>
+        <li><a href="index.html">Main Site</a></li>
+        <li><a href="#" id="logoutBtn">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-header">
+        <div>
+          <h1>Product Management</h1>
+          <p>Add, edit, and delete products</p>
+        </div>
+      </header>
+
+      <section class="admin-form-section">
+        <h2 id="formTitle">Add Product</h2>
+
+        <form id="productForm" class="admin-product-form">
+          <input type="hidden" id="productId" />
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productName">Product Name</label>
+              <input type="text" id="productName" required />
+            </div>
+
+            <div class="form-group">
+              <label for="productCategory">Category</label>
+              <select id="productCategory" required>
+                <option value="">Select Category</option>
+                <option value="Seeds">Seeds</option>
+                <option value="Fertilizers">Fertilizers</option>
+                <option value="Pesticides">Pesticides</option>
+                <option value="Tools">Tools</option>
+                <option value="Irrigation">Irrigation</option>
+                <option value="Organic">Organic</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productPrice">Price</label>
+              <input type="number" id="productPrice" required />
+            </div>
+
+            <div class="form-group">
+              <label for="productGst">GST %</label>
+              <input type="number" id="productGst" value="18" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="productStock">Stock Quantity</label>
+              <input type="number" id="productStock" required />
+            </div>
+
+             <div class="form-group">
+                <label for="productImageFile">Upload Image</label>
+                <input type="file" id="productImageFile" accept="image/*" required />
+            </div>
+
+          <div class="form-group">
+            <label for="productDescription">Description</label>
+            <textarea id="productDescription" rows="4" required></textarea>
+          </div>
+
+          <div class="admin-form-actions">
+            <button type="submit" class="btn" id="saveBtn">Save Product</button>
+            <button type="button" class="btn btn-cancel" id="cancelEditBtn">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-table-section">
+        <div class="table-header">
+          <h2>All Products</h2>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>GST</th>
+                <th>Stock</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin-products.js"></script>
+</body>
+</html>

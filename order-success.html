@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Success - Agro Traders</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <div class="logo">
+        <h2><a href="index.html" class="logo-link">Agro Traders</a></h2>
+      </div>
+
+      <nav class="nav always-show">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="success-page">
+    <div class="container">
+      <div class="success-box">
+        <h2>Order Placed Successfully</h2>
+        <p>Thank you for shopping with Agro Traders.</p>
+        <p>Your order details are shown below.</p>
+
+        <div id="orderDetails"></div>
+
+        <div class="success-actions">
+          <a href="index.html" class="btn">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const order = JSON.parse(localStorage.getItem("latestOrder"));
+    const orderDetails = document.getElementById("orderDetails");
+
+    if (!order) {
+      orderDetails.innerHTML = `
+        <div class="empty-cart">
+          <h3>No order found</h3>
+        </div>
+      `;
+    } else {
+      orderDetails.innerHTML = `
+       <div class="order-info">
+        <p><strong>Name:</strong> ${order.customerName}</p>
+        <p><strong>Phone:</strong> ${order.customerPhone}</p>
+        <p><strong>Email:</strong> ${order.customerEmail}</p>
+        <p><strong>Address:</strong> ${order.customerAddress}</p>
+        <p><strong>Village / City:</strong> ${order.customerVillage}</p>
+        <p><strong>Pincode:</strong> ${order.customerPincode}</p>
+        <p><strong>Payment Method:</strong> ${order.paymentMethod}</p>
+        <p><strong>Order Date:</strong> ${order.orderDate}</p>
+        <p><strong>Subtotal:</strong> ₹${order.subtotal}</p>
+  <p><strong>GST:</strong> ₹${order.gstAmount}</p>
+  <p><strong>Delivery Charge:</strong> ₹${order.deliveryCharge}</p>
+  <p><strong>Total Amount:</strong> ₹${order.finalTotal}</p>
+</div>
+        <h3 style="margin-top:20px;">Ordered Items</h3>
+        <div class="ordered-items">
+          ${order.items.map(item => `
+            <div class="checkout-item">
+              <img src="${item.image}" alt="${item.name}">
+              <div class="checkout-item-info">
+                <h4>${item.name}</h4>
+                <p>Price: ₹${item.price}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Total: ₹${item.price * item.quantity}</p>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
